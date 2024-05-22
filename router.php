@@ -1,18 +1,18 @@
 <?php
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+// $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-$routes = [
-    '/' => 'controllers/index.php',
-];
+// $routes = [
+//     '/' => 'controllers/index.php',
+// ];
 
-function routeToController($uri, $routes)
-{
-    if(array_key_exists($uri, $routes)) {
-        require($routes[$uri]);
-    } else {
-        abort();
-    }
-}
+// function routeToController($uri, $routes)
+// {
+//     if(array_key_exists($uri, $routes)) {
+//         require($routes[$uri]);
+//     } else {
+//         abort();
+//     }
+// }
 
-routeToController($uri, $routes);
+// routeToController($uri, $routes);

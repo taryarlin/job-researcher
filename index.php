@@ -2,18 +2,21 @@
 
 require 'Core/functions.php';
 // require('router.php');
-require 'Core/Database.php';
+
+$config = require('config.php');
 
 const BASE_PATH = __DIR__ . '/../';
 
-dd(BASE_PATH);
+
+// $db = new Database($config['database']);
+
+// $db = new Core\Database($config);
+
+$router = new Core\Router;
 
 
-$config = require('config.php');
-$db = new Database($config['database']);
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
+$method = $_SERVER['REQUEST_METHOD'];
 
-
-// $admins = $db->query('select * from admins')->get();
-
-// dd($admins);
+$router->route($uri, $method);
