@@ -5,6 +5,10 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $password = $_POST['password'];
 
+if(\Core\Validator::string($name)) {
+
+}
+
 if($name === '' || $email === '' || $phone === '' || $password === '') {
     header('location: /admins/create');
 
@@ -13,7 +17,6 @@ if($name === '' || $email === '' || $phone === '' || $password === '') {
 
 $config = require 'config.php';
 $db = new \Core\Database($config['database']);
-
 
 $query = "INSERT INTO admins(name, email, phone, password) VALUES (:name, :email, :phone, :password)";
 
@@ -24,5 +27,4 @@ $db->query($query, [
     ':password' => md5($password),
 ]);
 
-
-header('location: /admins/create');
+header('location: /admins');

@@ -13,8 +13,8 @@
 <body>
 
 <div class="row">
-    <div class="col-2 p-0">
+    <div class="col-md-2">
         <?php require('views/admin_panel/layouts/sidebar.view.php'); ?>
     </div>
 
-    <div class="col-10 p-0">
+    <div class="col-md-10">

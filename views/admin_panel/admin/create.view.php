@@ -2,11 +2,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-12">
             <div class="card mt-5">
                 <div class="card-body">
 
-                    <h5>Create Admin</h5>
+                    <div style="display: flex;justify-content: space-between;align-items: center;">
+                        <h5>Create Admin</h5>
+
+                        <a href="/admins" class="btn btn-primary">Back</a>
+                    </div>
 
                     <hr/>
 
