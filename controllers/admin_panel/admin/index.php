@@ -1,7 +1,8 @@
 <?php
+use Core\App;
+use Core\Database;
 
-$config = require 'config.php';
-$db = new \Core\Database($config['database']);
+$db = App::resolve(Database::class);
 
 $admins = $db->query('SELECT * FROM admins')->get();
 
