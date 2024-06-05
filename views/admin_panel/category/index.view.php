@@ -7,9 +7,9 @@
                 <div class="card-body">
 
                     <div style="display: flex;justify-content: space-between;align-items: center;">
-                        <h5>Admins</h5>
+                        <h5>Categories</h5>
 
-                        <a href="/admins/create" class="btn btn-primary">Create Admin</a>
+                        <a href="/categories/create" class="btn btn-primary">Create Category</a>
                     </div>
 
                     <hr/>
@@ -19,8 +19,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>Action</th>
@@ -28,22 +26,20 @@
                         </thead>
 
                         <tbody>
-                            <?php foreach($admins as $key => $admin) : ?>
+                            <?php foreach($categories as $key => $category) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $admin['name']; ?></td>
-                                    <td><?= $admin['email']; ?></td>
-                                    <td><?= $admin['phone']; ?></td>
-                                    <td><?= $admin['created_at']; ?></td>
-                                    <td><?= $admin['updated_at']; ?></td>
+                                    <td><?= $category['name']; ?></td>
+                                    <td><?= $category['created_at']; ?></td>
+                                    <td><?= $category['updated_at']; ?></td>
                                     <td>
                                         <div style="display: flex;justify-content: space-between;align-items: center;">
-                                            <a href="/admins/show?id=<?= $admin['id']; ?>" class="btn btn-info">View</a>
+                                            <a href="/categories/show?id=<?= $category['id']; ?>" class="btn btn-info">View</a>
 
-                                            <a href="/admins/edit?id=<?= $admin['id']; ?>" class="btn btn-warning">Edit</a>
+                                            <a href="/categories/edit?id=<?= $category['id']; ?>" class="btn btn-warning">Edit</a>
 
-                                            <form method="POST" action="/admins/delete" id="delete_admin">
-                                                <input type="hidden" name="id" value="<?= $admin['id']; ?>">
+                                            <form method="POST" action="/categories/delete" id="delete_admin">
+                                                <input type="hidden" name="id" value="<?= $category['id']; ?>">
 
                                                 <button id="deleteBtn" type="submit" class="btn btn-danger">Delete</button>
                                             </form>

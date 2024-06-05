@@ -6,4 +6,4 @@ $db = App::resolve(Database::class);
 
 $admins = $db->query('SELECT * FROM admins')->get();
 
-require 'views/admin_panel/admin/index.view.php';
+return view('admin_panel/admin/index.view.php', compact('admins'));
