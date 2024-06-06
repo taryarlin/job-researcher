@@ -21,5 +21,9 @@
         <li class="sidebar-menu">
             <a href="/categories" class="px-4 py-2 d-block"> Categories</a>
         </li>
+
+        <li class="sidebar-menu">
+            <a href="/companies" class="px-4 py-2 d-block"> Companies</a>
+        </li>
     </ul>
 </aside>

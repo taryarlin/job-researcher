@@ -24,4 +24,12 @@ $router->get('/categories/edit', 'controllers/admin_panel/category/edit.php');
 $router->post('/categories/edit', 'controllers/admin_panel/category/update.php');
 $router->post('/categories/delete', 'controllers/admin_panel/category/delete.php');
 
+# Company
+$router->get('/companies', 'controllers/admin_panel/company/index.php');
+$router->get('/companies/create', 'controllers/admin_panel/company/create.php');
+$router->post('/companies/create', 'controllers/admin_panel/company/store.php');
+$router->get('/companies/edit', 'controllers/admin_panel/company/edit.php');
+$router->post('/companies/edit', 'controllers/admin_panel/company/update.php');
+$router->post('/companies/delete', 'controllers/admin_panel/company/delete.php');
+
 $router->get('/users', 'controllers/admin_panel/dashboard.php');
