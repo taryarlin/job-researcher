@@ -2,13 +2,16 @@
 
 $router->get('/', 'controllers/index.php');
 
-
 # Admin Panel
 $router->get('/admin', 'controllers/admin_panel/index.php');
 $router->get('/dashboard', 'controllers/admin_panel/dashboard.php');
 
+# Admin Login
+$router->get('/admin/login', 'controllers/admin_panel/auth/login_form.php')->only('guest');
+$router->post('/admin/login', 'controllers/admin_panel/auth/login.php')->only('guest');
+
 # Admin
-$router->get('/admins', 'controllers/admin_panel/admin/index.php');
+$router->get('/admins', 'controllers/admin_panel/admin/index.php')->only('auth');
 $router->get('/admins/show', 'controllers/admin_panel/admin/show.php');
 $router->get('/admins/create', 'controllers/admin_panel/admin/create.php');
 $router->post('/admins/create', 'controllers/admin_panel/admin/store.php');
@@ -17,7 +20,7 @@ $router->post('/admins/edit', 'controllers/admin_panel/admin/update.php');
 $router->post('/admins/delete', 'controllers/admin_panel/admin/delete.php');
 
 # Category
-$router->get('/categories', 'controllers/admin_panel/category/index.php');
+$router->get('/categories', 'controllers/admin_panel/category/index.php')->only('auth');
 $router->get('/categories/create', 'controllers/admin_panel/category/create.php');
 $router->post('/categories/create', 'controllers/admin_panel/category/store.php');
 $router->get('/categories/edit', 'controllers/admin_panel/category/edit.php');
