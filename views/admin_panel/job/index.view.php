@@ -7,9 +7,9 @@
                 <div class="card-body">
 
                     <div style="display: flex;justify-content: space-between;align-items: center;">
-                        <h5>Companies</h5>
+                        <h5>Jobs</h5>
 
-                        <a href="/companies/create" class="btn btn-primary">Create Company</a>
+                        <a href="/jobs/create" class="btn btn-primary">Create Job</a>
                     </div>
 
                     <hr/>
@@ -26,26 +26,22 @@
                         </thead>
 
                         <tbody>
-                            <?php foreach($companies as $key => $company) : ?>
+                            <?php foreach($jobs as $key => $job) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
                                     <td>
-                                        <?= $company['name']; ?>
-
-                                        <div>
-                                            <img src="<?= $company['logo']; ?>" alt="<?= $company['name']; ?>" style="object-fit: cover;width: 100px;height: auto;" />
-                                        </div>
+                                        <?= $job['title']; ?>
                                     </td>
-                                    <td><?= $company['created_at']; ?></td>
-                                    <td><?= $company['updated_at']; ?></td>
+                                    <td><?= $job['created_at']; ?></td>
+                                    <td><?= $job['updated_at']; ?></td>
                                     <td>
                                         <div style="display: flex;justify-content: space-between;align-items: center;">
-                                            <a href="/companies/show?id=<?= $company['id']; ?>" class="btn btn-info">View</a>
+                                            <a href="/jobs/show?id=<?= $job['id']; ?>" class="btn btn-info">View</a>
 
-                                            <a href="/companies/edit?id=<?= $company['id']; ?>" class="btn btn-warning">Edit</a>
+                                            <a href="/jobs/edit?id=<?= $job['id']; ?>" class="btn btn-warning">Edit</a>
 
-                                            <form method="POST" action="/companies/delete" id="delete_admin">
-                                                <input type="hidden" name="id" value="<?= $company['id']; ?>">
+                                            <form method="POST" action="/jobs/delete" id="delete_admin">
+                                                <input type="hidden" name="id" value="<?= $job['id']; ?>">
 
                                                 <button id="deleteBtn" type="submit" class="btn btn-danger">Delete</button>
                                             </form>

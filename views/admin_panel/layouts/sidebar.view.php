@@ -1,4 +1,4 @@
-<aside class="bg-info vh-100">
+<aside class="bg-info w-full">
     <div class="text-center">
         <h3>Logo</h3>
     </div>
@@ -24,6 +24,10 @@
 
         <li class="sidebar-menu">
             <a href="/companies" class="px-4 py-2 d-block"> Companies</a>
+        </li>
+
+        <li class="sidebar-menu">
+            <a href="/jobs" class="px-4 py-2 d-block"> Jobs</a>
         </li>
     </ul>
 </aside>

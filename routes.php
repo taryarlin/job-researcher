@@ -35,4 +35,12 @@ $router->get('/companies/edit', 'controllers/admin_panel/company/edit.php');
 $router->post('/companies/edit', 'controllers/admin_panel/company/update.php');
 $router->post('/companies/delete', 'controllers/admin_panel/company/delete.php');
 
+# Job
+$router->get('/jobs', 'controllers/admin_panel/job/index.php');
+$router->get('/jobs/create', 'controllers/admin_panel/job/create.php');
+$router->post('/jobs/create', 'controllers/admin_panel/job/store.php');
+$router->get('/jobs/edit', 'controllers/admin_panel/job/edit.php');
+$router->post('/jobs/edit', 'controllers/admin_panel/job/update.php');
+$router->post('/jobs/delete', 'controllers/admin_panel/job/delete.php');
+
 $router->get('/users', 'controllers/admin_panel/dashboard.php');

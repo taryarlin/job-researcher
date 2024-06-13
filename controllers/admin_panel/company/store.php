@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Core\App;
 use Core\Database;
 
@@ -16,7 +17,9 @@ if(!empty($errors)) {
 }
 
 if($_FILES['logo'] && $_FILES['logo']['name'] != '') {
-    $file_name = 'public/assets/images/' . $_FILES['logo']['name'];
+    $unique_file_name = Carbon::now()->format('YmdHmi') . '_' . $_FILES['logo']['name'];
+
+    $file_name = 'public/assets/images/' . $unique_file_name;
 
     move_uploaded_file($_FILES['logo']['tmp_name'], $file_name);
 }

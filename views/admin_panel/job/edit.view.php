@@ -33,7 +33,7 @@
 
                         <div>
                             <img
-                                src="<?= '/' . $company['logo'] ?>"
+                                src="<?= $company['logo'] ?>"
                                 alt="<?= $company['name']; ?>"
                                 style="object-fit: cover;width: 100px;height: auto;"
                             />
