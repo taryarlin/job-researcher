@@ -10,4 +10,10 @@ if(!$job) {
     abort();
 }
 
-return view('admin_panel/job/edit.view.php', compact('job'));
+$categories = $db->query('SELECT * FROM categories')->get();
+$companies = $db->query('SELECT * FROM companies')->get();
+
+$selected_category = $db->query('SELECT * FROM categories WHERE id = :id', [':id' => $job['category_id']])->find();
+$selected_company = $db->query('SELECT * FROM companies WHERE id = :id', [':id' => $job['company_id']])->find();
+
+return view('admin_panel/job/edit.view.php', compact('job', 'categories', 'companies', 'selected_category', 'selected_company'));
