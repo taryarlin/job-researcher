@@ -1,6 +1,6 @@
 <?php
 
-$router->get('/', 'controllers/index.php');
+$router->get('/', 'controllers/frontend/index.php');
 
 # Admin Panel
 $router->get('/admin', 'controllers/admin_panel/index.php');

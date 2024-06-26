@@ -2,7 +2,4 @@
 
 $page_name = 'Welcome from Home';
 
-
-
-
-dd($_SESSION['user']);
+return view('frontend/index.view.php');
